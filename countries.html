@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Famous Countries - Travel Guide</title>
+    <style>
+        :root {
+            --accent1: #667eea;
+            --accent2: #764ba2;
+            --bg-grad: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+            --card-bg: #ffffff;
+            --muted: #666;
+            --surface: #f8f9fa;
+            --btn-grad: linear-gradient(90deg, #7f5af0, #4a3aff);
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-grad);
+            color: #222;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* page container (gives white rounded card look like your homepage) */
+        .page-wrap {
+            max-width: 1100px;
+            margin: 32px auto;
+            border-radius: 12px;
+            background: var(--card-bg);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+            overflow: hidden;
+        }
+
+        header {
+            padding: 36px 28px 8px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--accent1);
+            font-size: 2.6rem;
+            letter-spacing: 0.3px;
+        }
+
+        header p.subtitle {
+            margin: 10px 0 28px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        /* each country is a full-width stacked card */
+        .country {
+            background: var(--card-bg);
+            margin: 20px 28px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transition: transform .18s ease, box-shadow .18s ease;
+        }
+
+        .country:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+        }
+
+        .country img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .country-content {
+            padding: 22px 26px 28px;
+            text-align: left;
+        }
+
+        .country h2 {
+            margin: 0 0 10px;
+            color: var(--accent1);
+            font-size: 1.6rem;
+        }
+
+        .country p.desc {
+            color: #444;
+            line-height: 1.65;
+            margin: 0 0 16px;
+            text-align: justify;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background: var(--btn-grad);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            cursor: pointer;
+            border: 0;
+            transition: transform .12s ease, opacity .12s ease;
+            box-shadow: 0 6px 18px rgba(79, 42, 200, 0.12);
+        }
+
+        .visit-btn:active {
+            transform: translateY(1px)
+        }
+
+        .visit-btn[disabled] {
+            opacity: .7;
+            cursor: default;
+        }
+
+        .visit-note {
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 26px;
+            border-top: 1px solid #f0f0f0;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-row a.btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #fff;
+            font-weight: 700;
+        }
+
+        footer.page-foot {
+            text-align: center;
+            padding: 18px;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        /* Responsive spacing */
+        @media (max-width:760px) {
+            .country img {
+                height: 260px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .country-content {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-wrap">
+
+        <header>
+            <h1>Countries To Visit</h1>
+        </header>
+
+        <!-- Countries list: each section uses Unsplash search so you get a pretty image automatically.
+         If you prefer a fixed photo, replace the img src with a direct URL or local file path. -->
+
+        <!-- List of countries starts here (all entries you requested) -->
+        <!-- 1 France -->
+        <article class="country" id="country-France">
+            <img src="Countries/italy.jpg" alt="France - Eiffel Tower">
+            <div class="country-content">
+                <h2>France</h2>
+                <p class="desc">France is an endlessly rich travel destination where romance, history, art and
+                    gastronomy come together.
+                    From the world-class museums of Paris — including the Louvre and Musée d'Orsay — to the narrow lanes
+                    of Montmartre, the capital is a study in contrasts and charm.
+                    Beyond Paris, rolling wine regions like Bordeaux and Burgundy invite long, leisurely tastings and
+                    vineyard tours.
+                    Provence’s lavender fields and hilltop villages offer a slower, sensory French pace while the Loire
+                    Valley's châteaux reveal Renaissance grandeur.
+                    The French Riviera mixes glamour and beaches in Nice and Cannes, while the Alps provide skiing and
+                    postcard mountain vistas.
+                    Cultural life thrives in café culture, sidewalk markets, and centuries of literature, painting and
+                    cinema.
+                    Seasonal festivals, from film to music, animate towns across the country and attract international
+                    crowds.
+                    Dining in France ranges from bistros to Michelin-starred temples of cuisine — food is central to the
+                    national identity.
+                    Wanderable old towns, lively regional traditions and excellent transport make France easy and
+                    rewarding to explore.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('France', this)">Mark as Visited</button>
+                    <span class="visit-note">Click to add France to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2 Spain -->
+        <article class="country" id="country-Spain">
+            <img src="Countries\spain.jpg" alt="Spain">
+            <div class="country-content">
+                <h2>Spain</h2>
+                <p class="desc">Spain hums with vibrant life, regional diversity and deep historical layers that show in
+                    its food, festivals and architecture.
+                    Barcelona is a modernist playground where Gaudí’s surreal buildings, including Sagrada Família,
+                    punctuate the cityscape.
+                    Madrid balances world-class art (the Prado, Reina Sofía) with lively tapas culture and expansive
+                    plazas.
+                    Andalusia’s whitewashed towns, flamenco rhythms and Moorish palaces — notably the Alhambra in
+                    Granada — reveal a layered past.
+                    Coastal regions like Costa del Sol and the Balearic Islands offer golden beaches, clear seas and a
+                    relaxed party-and-rest mix.
+                    Inland landscapes include the green mountains of the north, the Rioja vineyards and the Camino de
+                    Santiago pilgrimage routes.
+                    Spanish cuisine ranges from humble tapas to refined cuisine, reflecting rich local produce and long
+                    culinary traditions.
+                    Annual festivals from La Tomatina to Semana Santa create memorable, high-energy experiences for
+                    visitors.
+                    Warm plazas, lively markets and a relaxed afternoon rhythm make Spain both intensely social and
+                    deeply historic.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Spain', this)">Mark as Visited</button>
+                    <span class="visit-note">Tap to mark Spain as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 3 United States -->
+        <article class="country" id="country-United States">
+            <img src="Countries\unitedstates.jpg" alt="United States">
+            <div class="country-content">
+                <h2>United States</h2>
+                <p class="desc">The United States covers an immense variety of landscapes, cultures and city experiences
+                    across its fifty states.
+                    New York City is a global crossroads of art, finance and theatre, while cities like Los Angeles,
+                    Chicago and New Orleans each offer distinct local flavors.
+                    Natural wonders like the Grand Canyon, Yellowstone, Yosemite and the Everglades showcase dramatic
+                    geography and biodiversity.
+                    California’s coastline provides beaches, vineyards and Silicon Valley’s tech hubs; the Rocky
+                    Mountains and Pacific Northwest offer outdoor adventure.
+                    American cuisine reflects centuries of cultural mixing — regional barbecue, seafood, southern
+                    comfort food and immigrant-driven neighborhoods.
+                    National parks, scenic drives and small towns make road-trip culture uniquely American and endlessly
+                    discoverable.
+                    Cultural exports like film, music and sports influence the world while local festivals and
+                    communities retain regional character.
+                    Historic sites from colonial towns to civil rights landmarks help tell the nation's complex story.
+                    Practical infrastructure for travelers is strong in major corridors, and adventurous routes reward
+                    those willing to explore beyond the cities.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('United States', this)">Mark as Visited</button>
+                    <span class="visit-note">Add the United States to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 4 Italy -->
+        <article class="country" id="country-Italy">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\italy.jpg" alt="Italy">
+            <div class="country-content">
+                <h2>Italy</h2>
+                <p class="desc">Italy is a treasure trove of art, history and culinary delights, with every region
+                    offering a distinct personality.
+                    Rome’s ancient ruins — the Colosseum and Roman Forum — share space with Vatican art and Baroque
+                    piazzas.
+                    Florence is a Renaissance open-air museum filled with masterpieces, while Venice’s canals and
+                    palazzos evoke romance and mystery.
+                    The Amalfi Coast and Cinque Terre provide dramatic coastal roads and cliffside villages with
+                    spectacular sea views.
+                    Tuscany’s rolling vineyards, hilltop villages and farm-to-table traditions make it ideal for slow
+                    travel and food experiences.
+                    Northern Italy is home to fashion and design in Milan, and the Alpine lakes provide refined escape
+                    and outdoor sports.
+                    Italian cuisine is regionally specific — from Neapolitan pizza to Ligurian pesto and Venetian
+                    seafood — and meals are the heart of social life.
+                    Historic festivals, artisan workshops and ancient cathedrals make Italy endlessly enjoyable for
+                    explorers and culture lovers.
+                    Compact historic centers, great train connections and a focus on local produce make Italy one of the
+                    world’s most beloved destinations.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Italy', this)">Mark as Visited</button>
+                    <span class="visit-note">Italy — pasta, history and scenic views await.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 5 China -->
+        <article class="country" id="country-China">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\china.jpg" alt="China">
+            <div class="country-content">
+                <h2>China</h2>
+                <p class="desc">China spans vast landscapes and millennia of civilization, offering layered cultural and
+                    natural experiences.
+                    From Beijing’s Forbidden City and Tiananmen Square to the Great Wall's sweeping watchtowers,
+                    imperial history is prominent.
+                    Shanghai’s skyline and bustling Bund show modern China’s global financial energy and cosmopolitan
+                    lifestyle.
+                    The southern regions feature lush karst scenery in Guilin and ancient towns like Lijiang, while
+                    Sichuan tempts with spicy cuisine and panda reserves.
+                    Xi’an houses the incredible Terracotta Army and offers an entry into China’s ancient imperial past.
+                    Regional cuisines vary dramatically — Cantonese dim sum, Sichuan pepper heat, and northern
+                    wheat-based specialties all tell local stories.
+                    Traditional festivals, tea culture, and classical gardens show centuries of refined cultural
+                    practices.
+                    Rapid urban development coexists with remote villages and dramatic nature, making travel across
+                    China endlessly varied.
+                    Practical rail and flight networks connect major hubs, while local markets and handicrafts provide
+                    rich cultural engagement for curious visitors.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('China', this)">Mark as Visited</button>
+                    <span class="visit-note">Add China to your visited entries.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 6 United Kingdom -->
+        <article class="country" id="country-United Kingdom">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\London.jpg" alt="United Kingdom">
+            <div class="country-content">
+                <h2>United Kingdom</h2>
+                <p class="desc">The United Kingdom weaves together ancient history, royal pageantry and modern cultural
+                    life across England, Scotland, Wales and Northern Ireland.
+                    London is a sprawling global city with museums, theatres, palaces and diverse neighborhoods offering
+                    food and culture from around the world.
+                    The English countryside — the Cotswolds, Lake District and Yorkshire Dales — provides rolling hills,
+                    historic estates and walking routes.
+                    Scotland’s Highlands offer rugged mountains, lochs and castles, while Edinburgh’s festivals and
+                    medieval Old Town captivate visitors.
+                    Wales pairs dramatic coastline and reclaimed industrial landscapes with Celtic culture and heritage.
+                    Northern Ireland’s Causeway Coast provides unique geological features and picturesque coastal towns.
+                    Tea houses, markets and centuries of literature and music shape daily life; pub culture remains an
+                    essential social fabric.
+                    Historic sites like Stonehenge, Bath, and Hampton Court offer glimpses of Britain’s layered past.
+                    Excellent rail links and short domestic flights make exploring the UK’s compact but varied treasures
+                    straightforward for travelers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('United Kingdom', this)">Mark as Visited</button>
+                    <span class="visit-note">Add the United Kingdom to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 7 Germany -->
+        <article class="country" id="country-Germany">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Germany.jpg" alt="Germany">
+            <div class="country-content">
+                <h2>Germany</h2>
+                <p class="desc">Germany is a country rich in history, culture, and natural beauty. Cities like Berlin
+                    showcase modern art, history, and nightlife. Bavaria offers charming towns and the famous
+                    Neuschwanstein Castle. The Romantic Road features medieval villages and scenic landscapes.
+                    Oktoberfest in Munich celebrates Bavarian culture and beer. Germany leads in engineering,
+                    automotive, and technology sectors. Castles and palaces reveal a feudal past. Forests and rivers
+                    provide outdoor adventures. Rich traditions in music, philosophy, and literature endure. The country
+                    balances innovation with cultural heritage.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Germany', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Germany as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 8 Mexico -->
+        <article class="country" id="country-Mexico">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Mexixo.jpg" alt="Mexico">
+            <div class="country-content">
+                <h2>Mexico</h2>
+                <p class="desc">Mexico is known for vibrant culture, ancient history, and diverse landscapes. Mexico
+                    City blends historic sites like the Zócalo and modern urban life. The Yucatán Peninsula features
+                    Mayan ruins such as Chichén Itzá. Colorful festivals and traditional cuisine attract visitors.
+                    Coastal resorts in Cancún and Riviera Maya offer beautiful beaches. Colonial architecture enriches
+                    cities like Guanajuato. Music, dance, and crafts reflect indigenous and Spanish heritage. Mexico’s
+                    natural parks preserve biodiversity and scenic beauty. The Day of the Dead is a symbolic cultural
+                    event. Warm hospitality and lively markets welcome tourists.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Mexico', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Mexico to your visited countries.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 9 Thailand -->
+        <article class="country" id="country-Thailand">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Thailand.jpg" alt="Thailand">
+            <div class="country-content">
+                <h2>Thailand</h2>
+                <p class="desc">Thailand boasts stunning natural beauty, rich culture, and flavorful cuisine. Bangkok is
+                    a bustling metropolis with temples and vibrant street markets. White sandy beaches and islands like
+                    Phuket draw sun seekers. Elaborate Buddhist temples emphasize spirituality and heritage. Thai food
+                    is known worldwide for its balance of spicy, sour, sweet, and salty. Festivals like Songkran (water
+                    festival) are widely celebrated. Traditional dance and arts flourish. The country offers lush
+                    jungles and waterfalls for adventurers. Friendly locals and hospitality are cultural hallmarks.
+                    Thailand mixes tradition and modernity seamlessly.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Thailand', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Thailand to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 10 Turkey -->
+        <article class="country" id="country-Turkey">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Turkey.jpg" alt="Turkey">
+            <div class="country-content">
+                <h2>Turkey</h2>
+                <p class="desc">Turkey is a land bridging Europe and Asia with rich history and landscapes. Istanbul’s
+                    Hagia Sophia and Blue Mosque are architectural marvels. Cappadocia’s fairy chimneys and underground
+                    cities attract tourists. Mediterranean and Aegean coasts offer beautiful beaches and resorts.
+                    Vibrant bazaars highlight Turkish crafts and cuisine. The country’s history includes Byzantine,
+                    Roman, and Ottoman empires. Turkish baths and hospitality are cultural rituals. Diverse landscapes
+                    range from mountains to fertile plains. Festivals celebrate religious and cultural traditions.
+                    Turkey blends ancient heritage with modern life.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Turkey', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Turkey as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 11 Austria -->
+        <article class="country" id="country-Austria">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Austria.jpg" alt="Austria">
+            <div class="country-content">
+                <h2>Austria</h2>
+                <p class="desc">Austria offers alpine landscapes, classical music heritage, and baroque architecture.
+                    Vienna, the capital, is renowned for its opera and palaces. Salzburg is Mozart’s birthplace with
+                    charming old towns. The Alps provide skiing, hiking, and nature retreats. Austrian cuisine includes
+                    schnitzel and strudel. The country has a rich cultural tradition in art and music. Historic coffee
+                    houses and markets add local flavor. Castles and monasteries dot the countryside. The Danube River
+                    flows through scenic landscapes. Austria is ideal for culture and nature lovers alike.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Austria', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Austria to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 12 Malaysia -->
+        <article class="country" id="country-Malaysia">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Malysia.jpg" alt="Malaysia">
+            <div class="country-content">
+                <h2>Malaysia</h2>
+                <p class="desc">Malaysia combines cosmopolitan cities, cultural diversity, and tropical islands. Kuala
+                    Lumpur features the iconic Petronas Towers. George Town is a UNESCO Heritage site with colonial
+                    architecture and street art. The country has diverse ethnic groups including Malay, Chinese, and
+                    Indian communities. Beaches on Langkawi and the Perhentian Islands attract tourists. Malaysian
+                    cuisine is a flavorful blend of cultures. Rainforests and national parks preserve biodiversity.
+                    Festivals from different religions are celebrated nationwide. Modern infrastructure blends with
+                    traditional markets. Malaysia is known for warm hospitality and cultural fusion.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Malaysia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Malaysia to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 13 Hong Kong (SAR China) -->
+        <article class="country" id="country-Hong Kong (SAR China)">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Hongkong.jpg" alt="Hong Kong">
+            <div class="country-content">
+                <h2>Hong Kong (SAR China)</h2>
+                <p class="desc">A dense, vertical city with neon skylines, a famous harbor, amazing food and easy access
+                    to nearby islands and hiking trails. Hong Kong blends Cantonese tradition with a modern high-rise
+                    skyline and bustling street markets. Take the Peak tram for panoramic views, ride ferries across
+                    Victoria Harbour, and sample dim sum at classic teahouses. The city’s mix of temples, colonial
+                    architecture and contemporary malls offers varied urban experiences. Lantau Island and outlying
+                    islands provide scenic hikes and beaches for quick escapes. Cultural festivals such as Chinese New
+                    Year light up the city with processions and fireworks. Streets are lined with specialty shops
+                    selling tea, dried seafood and local delicacies. Night markets and street food stalls deliver
+                    vibrant local flavor at all hours. Efficient public transport makes moving around easy, and the
+                    city’s small size means many highlights are within reach of a short trip.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Hong Kong (SAR China)', this)">Mark as
+                        Visited</button>
+                    <span class="visit-note">Mark Hong Kong as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 14 Greece -->
+        <article class="country" id="country-Greece">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Greece.jpg" alt="Greece">
+            <div class="country-content">
+                <h2>Greece</h2>
+                <p class="desc">Famed for ancient ruins, island-dotted seas and white-and-blue villages — from Athens’
+                    Acropolis to the sunsets in Santorini and the beaches across the Aegean. Greece’s layered history is
+                    visible in archaeological sites, classical temples and Byzantine churches. Island hopping brings a
+                    succession of unique charms: Santorini’s caldera vistas, Mykonos’ nightlife, and Crete’s rugged
+                    landscapes and olive groves. Traditional Greek cuisine centers on fresh seafood, grilled meats and
+                    simple ingredients like olive oil, herbs and local cheeses. Inland regions such as the Peloponnese
+                    and Meteora’s monastic cliffs offer dramatic scenery and quieter cultural experiences. The sea
+                    shapes daily life here — fishing villages, boat trips and seaside tavernas are part of the rhythm.
+                    Festivals and Orthodox religious holidays are woven into local culture and provide lively community
+                    experiences. Friendly hospitality, strong local traditions and easy ferry connections make Greece a
+                    classic Mediterranean destination.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Greece', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Greece to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 15 Russia -->
+        <article class="country" id="country-Russia">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Russia.jpg" alt="Russia">
+            <div class="country-content">
+                <h2>Russia</h2>
+                <p class="desc">Vast and diverse — from Moscow’s Red Square and onion domes to St. Petersburg’s palaces
+                    and cultural riches, Russia spans many regions and climates. St. Petersburg’s baroque palaces and
+                    museum collections, including the Hermitage, showcase imperial art and architecture. Moscow’s
+                    Kremlin, cathedrals and modern skyline highlight both history and contemporary life. The
+                    Trans-Siberian Railway crosses epic landscapes, offering a legendary overland journey across
+                    forests, steppes and mountains. Russian literature, ballet and classical music are core parts of
+                    national culture and are celebrated in theatres and concert halls. Remote regions such as Kamchatka
+                    provide volcanic landscapes and wildlife for adventurous travelers, while Lake Baikal offers unique
+                    freshwater ecosystems and pristine nature. Regional cuisines, cold-climate traditions and hearty
+                    comfort dishes reflect the climate and history. Language and travel logistics require more planning,
+                    but the country rewards visitors with grand cultural institutions and dramatic natural beauty.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Russia', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Russia as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 16 Japan -->
+        <article class="country" id="country-Japan">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Japan.jpg" alt="Japan">
+            <div class="country-content">
+                <h2>Japan</h2>
+                <p class="desc">A balance of ancient tradition and futuristic cities — visit Tokyo, Kyoto’s temples,
+                    Mount Fuji, cherry blossoms and impeccable cuisine across the country. Tokyo’s neighborhoods range
+                    from neon-lit Shinjuku and Shibuya to refined Ginza shopping and quieter creative districts. Kyoto
+                    preserves shrines, temples and tea houses where geisha districts and zen gardens recall centuries of
+                    cultural refinement. Regional landscapes — from Hokkaido’s wild snowscapes to Okinawa’s subtropical
+                    islands — offer vastly different outdoors experiences. Japanese cuisine emphasizes seasonality and
+                    craft, from sushi counters to izakaya comfort food and regional specialties. Festivals, sumo
+                    tournaments and traditional arts remain vibrant and accessible to visitors. Efficient trains and the
+                    Shinkansen network make intercity travel fast and comfortable. Respectful behavior, clear cultural
+                    etiquette, and a love of detail make Japan simultaneously welcoming and endlessly fascinating to
+                    explore.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Japan', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Japan to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 17 Canada -->
+        <article class="country" id="country-Canada">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Canada.jpg" alt="Canada">
+            <div class="country-content">
+                <h2>Canada</h2>
+                <p class="desc">From rugged national parks and the Rocky Mountains to multicultural cities like Toronto
+                    and Vancouver, Canada offers vast wilderness and cosmopolitan life. The Canadian Rockies provide
+                    world-class hiking, skiing and dramatic alpine scenery in places like Banff and Jasper. Cities such
+                    as Vancouver, Montreal and Toronto combine cultural diversity, culinary scenes and vibrant
+                    festivals. Eastern provinces offer historic architecture, rugged coastline and maritime culture,
+                    while the north delivers Arctic landscapes and indigenous communities. Wildlife viewing
+                    opportunities include bears, whales and moose in their natural habitats. Canadian cuisine reflects
+                    regional produce, seafood and multicultural influences. Outdoor sport, conservation-minded tourism
+                    and national parks make Canada ideal for travelers who love nature and modern city comforts. Long
+                    distances require planning, but scenic drives and rail journeys reward visitors with dramatic vistas
+                    and friendly local hospitality.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Canada', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Canada as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 18 Saudi Arabia -->
+        <article class="country" id="country-Saudi Arabia">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Saudi arabia.jpg" alt="Saudi Arabia">
+            <div class="country-content">
+                <h2>Saudi Arabia</h2>
+                <p class="desc">A land of deserts, historic sites and growing tourism infrastructure — from ancient
+                    heritage to modern cities like Riyadh and Jeddah’s Red Sea coast. Historic sites such as Al-Ula and
+                    Madain Saleh highlight pre-Islamic and early-Islamic archaeology with dramatic sandstone landscapes.
+                    Riyadh has modern museums, cultural districts and rapidly developing hospitality offerings, while
+                    Jeddah’s Corniche and historical Al-Balad provide coastal charm and Ottoman-era architecture. The
+                    Red Sea coastline is emerging as a snorkeling, diving and resort destination with pristine coral
+                    reefs and new luxury developments. Traditional souks, culinary traditions and hospitality remain
+                    central to daily life. Religious tourism to the holy cities is the country’s most significant
+                    cultural pillar and shapes infrastructure and services. New visa policies and major cultural
+                    projects are opening the country more to international visitors. For travelers, blending modern
+                    amenities with historic exploration offers a distinct experience of the Arabian Peninsula.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Saudi Arabia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Saudi Arabia to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 19 Poland -->
+        <article class="country" id="country-Poland">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\poland.jpg" alt="Poland">
+            <div class="country-content">
+                <h2>Poland</h2>
+                <p class="desc">Rich in medieval towns, resilient culture and scenic countryside — cities like Kraków
+                    and Warsaw combine history and modern life beautifully. Kraków’s historic Old Town and Wawel Castle
+                    offer a compact, walkable introduction to Polish art and architecture. Warsaw blends reconstructed
+                    historic neighborhoods with modern business districts and lively cultural venues. The Tatra
+                    Mountains provide alpine hiking and winter sports near Zakopane, while the Masurian Lakes region is
+                    perfect for boating and nature escapes. Poland’s cuisine emphasizes hearty dishes, seasonal produce,
+                    and rich traditions — from pierogi to smoked meats. Museums and memorials document the country’s
+                    complex twentieth-century history while folk festivals preserve regional crafts and dance. Excellent
+                    rail links make it straightforward to move between major cities and scenic regions. Warm local
+                    hospitality and affordable travel make Poland an attractive and rewarding European destination.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Poland', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Poland to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 20 South Korea -->
+        <article class="country" id="country-South Korea">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\South korea.jpg" alt="South Korea">
+            <div class="country-content">
+                <h2>South Korea</h2>
+                <p class="desc">A technology-forward nation with deep cultural roots — from Seoul’s nightlife and
+                    K-culture to scenic islands, palaces and delicious cuisine. Seoul offers a fast-paced urban
+                    experience with ancient palaces, bustling markets like Namdaemun and Myeongdong, and a thriving café
+                    and nightlife scene. Korean pop culture, film and music have become global phenomena and draw
+                    visitors keen to experience concerts, themed cafes, and fashion districts. Historic sites such as
+                    Gyeongbokgung and traditional hanok villages sit alongside sleek shopping centers and tech hubs.
+                    Regional destinations like Busan present beaches, seafood markets and waterfront promenades, while
+                    Jeju Island provides volcanic landscapes and relaxed island charm. Korean cuisine emphasizes bold,
+                    fermented flavors — from kimchi to barbecue and street food classics. Public transit is efficient,
+                    safe and easy to navigate, enabling quick day trips outside the capital. A strong fusion of
+                    tradition and modern innovation makes South Korea uniquely engaging for cultural travelers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('South Korea', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark South Korea as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 21 Netherlands -->
+        <article class="country" id="country-Netherlands">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Netherlands.jpg" alt="Netherlands">
+            <div class="country-content">
+                <h2>Netherlands</h2>
+                <p class="desc">Canals, cycle paths and tulip fields define the Netherlands — Amsterdam’s museums,
+                    historic towns and scenic countryside are easy to explore. Amsterdam’s canal ring, the Rijksmuseum
+                    and Van Gogh Museum are must-sees, while the city’s neighborhoods offer lively markets and café
+                    culture. Small cities like Utrecht and Leiden have charming canals, historic buildings and a relaxed
+                    pace. The Dutch countryside blooms in spring with colorful tulip fields and seasonal flower
+                    festivals. Bicycling is the national mode of transport and offers an intimate way to experience
+                    landscapes and villages. Windmills, traditional crafts and open-air museums celebrate rural
+                    heritage, while modern design and architecture appear in Rotterdam. Local cuisine includes herring,
+                    street-side snacks and hearty seasonal fare. Compact geography, efficient trains and welcoming
+                    hospitality make the Netherlands ideal for short trips and multi-day explorations.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Netherlands', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Netherlands to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 22 Macao (SAR China) -->
+        <article class="country" id="country-Macao (SAR China)">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Macau, China.jpg" alt="Macao">
+            <div class="country-content">
+                <h2>Macao (SAR China)</h2>
+                <p class="desc">A compact destination known for casinos, Portuguese-influenced architecture, and a
+                    lively nightlife scene near the Pearl River Delta. Macao’s historic center — a UNESCO World Heritage
+                    site — mixes baroque churches with Chinese temples and colonial squares. The city’s luxury resorts
+                    and entertainment complexes offer world-class shows, dining and casinos, while local eateries
+                    preserve Macanese fusion cuisine blending Portuguese and Cantonese influences. Waterfront promenades
+                    and romantic plazas recall the city’s maritime past, and small museums explain its colonial and
+                    trading history. Festival programming and cultural events bring the city to life year-round.
+                    Although compact, Macao also has quieter pockets to explore and day-trip options to nearby islands.
+                    With friendly hospitality and easy walkability, Macao can be enjoyed as a short city break with a
+                    unique cultural twist.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Macao (SAR China)', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Macao to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 23 Hungary -->
+        <article class="country" id="country-Hungary">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Hungary.jpg" alt="Hungary">
+            <div class="country-content">
+                <h2>Hungary</h2>
+                <p class="desc">Budapest’s thermal baths, historic bridges and lively cultural scene make Hungary a
+                    charming European highlight. The Danube divides Buda’s hills and Pest’s flat cityscape, offering
+                    both castle views and bustling urban life. Historic bathhouses such as Széchenyi and Gellért are
+                    social centers where locals and visitors relax. Hungary’s cuisine is rich and comforting — goulash,
+                    paprika-seasoned dishes and hearty pastries feature in local dining. Baroque, Art Nouveau and
+                    19th-century architecture dot the streets, while ruin bars provide a unique nightlife experience.
+                    Day trips to the wine regions of Eger and Tokaj allow for vineyard visits and tasting sessions. Folk
+                    traditions and music remain strong in rural areas and seasonal festivals. Budapest’s museums, river
+                    cruises and pedestrian-friendly streets make it an accessible and rewarding city break.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Hungary', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Hungary as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 24 United Arab Emirates -->
+        <article class="country" id="country-United Arab Emirates">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\UAE.jpg" alt="United Arab Emirates">
+            <div class="country-content">
+                <h2>United Arab Emirates</h2>
+                <p class="desc">Futuristic skylines, luxury resorts and desert adventures — Dubai and Abu Dhabi showcase
+                    modern architecture, shopping and world-class attractions. Dubai’s Burj Khalifa, sprawling malls and
+                    waterfront promenades reflect rapid urban development and international tourism. Abu Dhabi’s
+                    cultural offerings include the Louvre Abu Dhabi and impressive mosque architecture. The UAE’s desert
+                    landscapes invite dune drives, overnight camps and traditional experiences with Bedouin hospitality.
+                    Coastal mangroves, beaches and marine reserves provide quieter natural escapes and water-based
+                    activities. High-end hotels, fine dining and global entertainment options make it a hub for lavish
+                    holidays and business travel. Local souks and markets offer traditional goods and flavors, from
+                    spices to gold. The country’s modern transport links and visitor infrastructure make it accessible
+                    for short-stop visits and longer stays alike.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('United Arab Emirates', this)">Mark as
+                        Visited</button>
+                    <span class="visit-note">Add UAE to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 25 India -->
+        <article class="country" id="country-India">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\India.jpg" alt="India">
+            <div class="country-content">
+                <h2>India</h2>
+                <p class="desc">A vast tapestry of languages, religions and landscapes — from the Taj Mahal and bustling
+                    markets to serene backwaters and mountain regions, India is endlessly diverse. Northern India offers
+                    the Himalayas for trekking, sacred rivers and Mughal architecture, while southern India shines with
+                    temples, spice regions and lush backwaters in Kerala. Rajasthan’s forts and desert palaces reveal
+                    royal history, and Goa’s beaches mix Portuguese heritage with beach culture. Indian cuisine is
+                    regionally distinct and highly varied — from aromatic biryanis to coastal seafood and street-food
+                    specialties. Festivals, music, classical dance and artisanal crafts are woven into daily life and
+                    local celebrations. Train journeys provide an intimate way to experience changing landscapes and
+                    regional cultures. Warm hospitality and deeply layered histories make India a compelling
+                    destination, though travel planning often benefits from local knowledge and time to absorb each
+                    region’s rhythm.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('India', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark India as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 26 Croatia -->
+        <article class="country" id="country-Croatia">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Croatia.jpg" alt="Croatia">
+            <div class="country-content">
+                <h2>Croatia</h2>
+                <p class="desc">Adriatic coastlines, medieval towns like Dubrovnik and clear blue seas make Croatia a
+                    favorite for island-hopping and scenic history. Dubrovnik’s walled Old Town provides iconic views,
+                    cliffside walks and historic architecture. The Dalmatian islands offer secluded coves, sailing
+                    opportunities and excellent seafood. Inland regions, such as Plitvice Lakes National Park, showcase
+                    cascading lakes, waterfalls and lush forests ideal for nature lovers. Croatia’s mix of Venetian,
+                    Austro-Hungarian and local influences appears in architecture and cuisine. Summer music festivals
+                    and coastal promenades bring vibrant seaside life, while quieter shoulder seasons reward travelers
+                    with mild weather and fewer crowds. Compact distances and ferry connections make island itineraries
+                    straightforward. Friendly hospitality and historic towns make Croatia an accessible Mediterranean
+                    gem for both relaxation and exploration.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Croatia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Croatia to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 27 Ukraine -->
+        <article class="country" id="country-Ukraine">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Ukraine.jpg" alt="Ukraine">
+            <div class="country-content">
+                <h2>Ukraine</h2>
+                <p class="desc">Historic cities, rich cultural traditions and varied landscapes from Carpathian
+                    mountains to Black Sea coasts — Ukraine offers deep heritage and architecture. Kyiv’s golden-domed
+                    churches and broad boulevards reflect centuries of historical evolution and vibrant urban life. Lviv
+                    is known for its UNESCO-listed old town, café culture and Austro-Hungarian architecture. The
+                    Carpathians provide mountain scenery, hiking and traditional wooden churches, while the Black Sea
+                    coast hosts resort towns and sandy beaches. Folk music, crafts and seasonal festivals remain strong
+                    features of local cultural life. Ukraine’s cuisine emphasizes hearty, comforting flavors — borscht,
+                    dumplings and breads are regional staples. Museums and historical sites tell significant national
+                    stories, and markets present local produce and artisan goods. Travel across the country reveals warm
+                    hospitality and a deep cultural resilience expressed in art and community life.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Ukraine', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Ukraine as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 28 Singapore -->
+        <article class="country" id="country-Singapore">
+            <img src="C:\Users\balas\OneDrive\Documents\FET\Countries\Singapore.jpg" alt="Singapore">
+            <div class="country-content">
+                <h2>Singapore</h2>
+                <p class="desc">A compact, modern city-state known for its cleanliness, multicultural neighborhoods,
+                    iconic gardens and food scene — highly walkable and very polished. Marina Bay’s skyline and Gardens
+                    by the Bay showcase futuristic green urbanism, while neighborhoods like Chinatown, Little India and
+                    Kampong Glam preserve cultural traditions and lively markets. Singapore’s hawker centers are
+                    culinary institutions offering a wide array of affordable, excellent local dishes. Efficient public
+                    transport, excellent standards of cleanliness and strong safety make Singapore an easy stop for
+                    travelers. The island’s parks, waterfront promenades and nearby Southern Islands provide green
+                    respites from urban life. High-end shopping, contemporary art galleries, and fine dining complement
+                    local street food cultures. Cultural programming, festivals and a focus on sustainability keep
+                    Singapore dynamic and forward-looking. For quick, multi-faceted city breaks, Singapore delivers a
+                    compact but rich travel experience.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Singapore', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Singapore to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 29 Indonesia -->
+        <article class="country" id="country-Indonesia">
+            <img src="https://source.unsplash.com/1600x900/?Indonesia,Bali,Java" alt="Indonesia">
+            <div class="country-content">
+                <h2>Indonesia</h2>
+                <p class="desc">An archipelago of islands with Bali’s beaches, lush rice terraces, and strong cultural
+                    traditions — Indonesia is perfect for nature, surf and culture lovers. Bali’s temples, vibrant arts
+                    scene and world-class surf draw visitors seeking spirituality, relaxation and adventure. Java
+                    contains bustling Jakarta, Borobudur and Prambanan temples and a dense cultural history. Komodo
+                    National Park, the Gili islands, and eastern archipelagos offer remote beaches, diving and unique
+                    wildlife such as Komodo dragons. Indonesian cuisine reflects regional produce and spice trade
+                    history, from sambal-hot dishes to Nusantara specialties. Rainforests, active volcanoes and rich
+                    biodiversity make Indonesia a naturalist’s playground. Local crafts, traditional dances and
+                    ceremonies are integral parts of cultural identity. Given its size, island hopping and careful
+                    planning reveal the full tapestry of Indonesia’s landscapes and cultures.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Indonesia', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Indonesia as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 30 Czech Republic -->
+        <article class="country" id="country-Czech Republic">
+            <img src="https://source.unsplash.com/1600x900/?Czech,Prague,Charles%20Bridge" alt="Czech Republic">
+            <div class="country-content">
+                <h2>Czech Republic</h2>
+                <p class="desc">Prague’s fairy-tale architecture, cobbled streets and bohemian charm make this country a
+                    highlight of Central Europe. The Old Town square, Astronomical Clock and Charles Bridge draw
+                    visitors into centuries of urban history. Beyond Prague, towns like Český Krumlov offer compact
+                    medieval centers and riverside charm. The Czech countryside and spa towns provide relaxing escapes
+                    and scenic vistas. Czech beer culture and hearty, comforting cuisine are a major part of the social
+                    fabric. Classical music traditions, castle tours and local festivals celebrate the country’s
+                    cultural heritage. Efficient train connections and compact geography make multi-city trips easy for
+                    travelers who want both urban and rural experiences. Warm hospitality and affordable travel combine
+                    for a rewarding European visit.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Czech Republic', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Czech Republic to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 31 Australia -->
+        <article class="country" id="country-Australia">
+            <img src="https://source.unsplash.com/1600x900/?Australia,Sydney,Great%20Barrier%20Reef" alt="Australia">
+            <div class="country-content">
+                <h2>Australia</h2>
+                <p class="desc">From the Great Barrier Reef to Sydney’s harbour and the Outback — Australia’s scale and
+                    natural diversity are unforgettable. Sydney’s harbour, beaches and cultural venues make a lively
+                    urban entry point, while Melbourne is known for coffee culture, arts and laneways. Tropical north
+                    Queensland offers reef snorkeling and rainforest excursions, and Tasmania provides pristine
+                    wilderness and gourmet local food. The Red Centre and Uluru deliver iconic desert landscapes and
+                    indigenous cultural experiences. Australia’s wine regions, surfing beaches and national parks
+                    provide a wide range of outdoor activities year-round. Wildlife viewing is a highlight — from
+                    kangaroos and koalas to marine life and unique bird species. Long distances encourage slow travel
+                    and regional exploration, but excellent domestic flight networks make connections manageable.
+                    Friendly locals, outdoor lifestyles and relaxed cities make Australia ideal for nature and culture
+                    seekers alike.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Australia', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Australia as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 32 Taiwan -->
+        <article class="country" id="country-Taiwan">
+            <img src="https://source.unsplash.com/1600x900/?Taiwan,Taipei,nightmarket" alt="Taiwan">
+            <div class="country-content">
+                <h2>Taiwan</h2>
+                <p class="desc">Famous for vibrant night markets, friendly cities like Taipei, and scenic natural parks
+                    — Taiwan blends good food and approachable travel well. Taipei’s street-food culture, lively markets
+                    and temples offer urban immersion and great eats. Taroko Gorge and the east coast present dramatic
+                    marble cliffs, hiking and coastal vistas. Tea-growing regions around Alishan invite mountain rail
+                    rides and serene views, while small towns preserve local crafts and traditions. Taiwan’s cuisine is
+                    varied and delicious, from beef noodle soup to bubble tea and street snacks. Cycling routes, hot
+                    springs and coastal drives create excellent active-travel options. Festivals and indigenous cultures
+                    offer colorful local experiences, and friendly locals make navigation and interaction pleasant.
+                    Compact size and efficient transport make Taiwan ideal for focused cultural and scenic trips.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Taiwan', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Taiwan to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 33 Iran -->
+        <article class="country" id="country-Iran">
+            <img src="https://source.unsplash.com/1600x900/?Iran,Persia,Isfahan" alt="Iran">
+            <div class="country-content">
+                <h2>Iran</h2>
+                <p class="desc">Home to ancient Persian history, stunning mosques and timeless architecture. Cities like
+                    Isfahan and Shiraz display intricate tilework and historic bazaars. Persepolis preserves monumental
+                    ruins of ancient empires, offering a powerful glimpse into antiquity. Iranian gardens, poetic
+                    traditions and classical music contribute to a deeply cultivated cultural identity. The country’s
+                    varied landscapes include deserts, mountain ranges and Caspian Sea coasts for diverse outdoor
+                    experiences. Local hospitality, elaborate cuisine, and tea culture are central to social life.
+                    Caravanserais, bazaars and traditional crafts connect travelers with centuries-old trade routes and
+                    artisanal skills. Travel logistics require local knowledge and respect for cultural norms, but those
+                    who visit discover layered history and warm local welcomes.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Iran', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Iran to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 34 Brazil -->
+        <article class="country" id="country-Brazil">
+            <img src="https://source.unsplash.com/1600x900/?Brazil,Rio,Amazon" alt="Brazil">
+            <div class="country-content">
+                <h2>Brazil</h2>
+                <p class="desc">From vibrant Rio de Janeiro and its beaches to the Amazon rainforest, Brazil is full of
+                    color, music and natural wonders. Rio’s beaches, Carnival and dramatic Sugarloaf and Corcovado
+                    vistas form an iconic tropical tableau. The Amazon basin offers unmatched biodiversity, river trips
+                    and indigenous culture experiences for adventurous travelers. Brazil’s cuisine, music and dance —
+                    samba, bossa nova and lively street festivals — permeate daily life and celebrations. The country’s
+                    interior and southern regions offer diverse climates and scenic attractions from wetlands to
+                    highlands. Historic colonial towns in Minas Gerais showcase baroque architecture and artisanal
+                    crafts. Food markets, churrascarias and tropical fruit stalls highlight the country’s culinary
+                    abundance. Warm local hospitality and large-scale festivals make Brazil an exuberant place to visit
+                    year-round.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Brazil', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Brazil as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 35 Cambodia -->
+        <article class="country" id="country-Cambodia">
+            <img src="https://source.unsplash.com/1600x900/?Cambodia,Angkor,Siem%20Reap" alt="Cambodia">
+            <div class="country-content">
+                <h2>Cambodia</h2>
+                <p class="desc">Home to the Angkor temples and warm countryside, Cambodia offers rich archaeology and
+                    friendly communities to explore. The Angkor Wat complex near Siem Reap is an awe-inspiring set of
+                    temples and bas-reliefs and remains the country’s most famous attraction. Phnom Penh’s riverfront
+                    and national museums help tell the nation’s history and resilience. Rural villages and rice paddies
+                    provide slower, reflective travel experiences and opportunities to connect with local life.
+                    Cambodian cuisine features grilled seafood, rice-based staples and fragrant local flavors.
+                    Traditional arts, dance and temples remain integral to cultural expression and community identity.
+                    Tropical coastlines and islands are emerging as quiet beach destinations away from larger Southeast
+                    Asian crowds. Visitor experiences are both historically significant and deeply human, shaped by
+                    culture and recovery from recent history.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Cambodia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Cambodia to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 36 Argentina -->
+        <article class="country" id="country-Argentina">
+            <img src="https://source.unsplash.com/1600x900/?Argentina,Buenos%20Aires,Patagonia" alt="Argentina">
+            <div class="country-content">
+                <h2>Argentina</h2>
+                <p class="desc">From tango in Buenos Aires to glaciers in Patagonia, Argentina mixes energetic urban
+                    culture and dramatic natural landscapes. Buenos Aires pulses with classical architecture, tango
+                    clubs, and lively café society. The wine regions around Mendoza provide scenic vineyards set against
+                    Andean backdrops and world-class Malbecs. Patagonia’s glaciers, including Perito Moreno, and
+                    Patagonian steppe offer unforgettable hiking and wildlife encounters. Northern provinces showcase
+                    dramatic canyons, waterfalls and indigenous culture. The country’s gaucho and ranching traditions
+                    are part of daily life outside the cities, and hearty grill-centric cuisine is a highlight. Cultural
+                    festivals, football passion and strong artistic traditions make Argentina a dynamic destination.
+                    Long distances reward travelers who explore both urban centers and remote natural wonders.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Argentina', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Argentina as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 37 Ireland -->
+        <article class="country" id="country-Ireland">
+            <img src="https://source.unsplash.com/1600x900/?Ireland,cliffs,Galway" alt="Ireland">
+            <div class="country-content">
+                <h2>Ireland</h2>
+                <p class="desc">Green landscapes, lively pubs and coastal cliffs — Ireland’s charm comes from its music,
+                    history and welcoming atmosphere. Dublin’s literary heritage, Georgian squares and lively pubs
+                    provide an inviting urban start to any visit. The west coast’s dramatic Cliffs of Moher and rugged
+                    coastal scenery showcase nature at its most elemental. Traditional music sessions, regional
+                    festivals and storytelling preserve living folk traditions across towns and villages. Castles,
+                    monastic ruins and ancient ringforts dot the countryside and reveal early island histories.
+                    Ireland’s food scene blends hearty local dishes with modern gastropub innovations and excellent
+                    seafood. Road trips along coastal routes offer mix of small towns, scenic viewpoints and warm
+                    hospitality. Easy to navigate and rich in atmosphere, Ireland remains a perennial favorite for
+                    culture and nature lovers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Ireland', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Ireland to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 38 Colombia -->
+        <article class="country" id="country-Colombia">
+            <img src="https://source.unsplash.com/1600x900/?Colombia,Cartagena,Bogota" alt="Colombia">
+            <div class="country-content">
+                <h2>Colombia</h2>
+                <p class="desc">A vibrant country with Caribbean coastlines, Andean mountains and colorful cities like
+                    Cartagena — Colombia offers music, coffee and culture. Cartagena’s colonial old town brims with
+                    bright buildings, plazas and ocean breezes. Bogotá blends high-altitude culture, museums and nearby
+                    mountain landscapes. Colombia’s coffee region combines rolling plantations, scenic routes and
+                    welcoming finca stays to learn bean-to-cup traditions. Coastal areas offer tropical beaches,
+                    Caribbean rhythms and historic port towns. The country’s music, dance and festivals celebrate
+                    regional identity and hospitality. Biodiversity in the Amazon, Pacific coast and Andean ecosystems
+                    make Colombia a naturalist’s delight. Rich culinary scenes and market culture provide delicious
+                    regional flavors and local discoveries for travelers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Colombia', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Colombia as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 39 Philippines -->
+        <article class="country" id="country-Philippines">
+            <img src="https://source.unsplash.com/1600x900/?Philippines,Boracay,Palawan" alt="Philippines">
+            <div class="country-content">
+                <h2>Philippines</h2>
+                <p class="desc">With thousands of islands, beautiful beaches and warm hospitality, the Philippines is a
+                    top destination for island adventures and diving. Palawan, El Nido and Coron are world-renowned for
+                    limestone cliffs, turquoise lagoons and exceptional snorkeling and diving. Boracay and other
+                    white-sand beaches provide party and resort options while quieter islands reward travelers seeking
+                    solitude and local life. Manila offers a rapidly evolving cultural scene with museums, markets and
+                    colonial remnants. Filipino cuisine celebrates seafood, tropical fruits and adobo and rice-based
+                    staples that sustain daily life. Festivals and strong community ties make the cultural experience
+                    lively and personal. Indigenous traditions and varied regional influences create a patchwork of
+                    languages, crafts and celebrations across the archipelago. Inter-island flights and ferries connect
+                    the many highlights, but island-hopping itineraries often require planning to maximize time and
+                    experiences.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Philippines', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Philippines to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 40 Chile -->
+        <article class="country" id="country-Chile">
+            <img src="https://source.unsplash.com/1600x900/?Chile,Santiago,Patagonia" alt="Chile">
+            <div class="country-content">
+                <h2>Chile</h2>
+                <p class="desc">A long, narrow country with deserts in the north, vineyards and cosmopolitan cities in
+                    the center, and glaciers and fjords in Patagonia to the south. The Atacama Desert offers dramatic
+                    lunar landscapes, salt flats and stargazing of the highest order. Central Chile contains the capital
+                    Santiago, nearby wine valleys and coastal towns that combine urban culture with outdoor escapes.
+                    Patagonia stretches into dramatic glaciers, Torres del Paine’s peaks and remote trekking
+                    opportunities. Chilean cuisine blends seafood, Andean influences and excellent wines in regional
+                    pairings. Native Mapuche traditions, modern art scenes and adventurous outdoor cultures shape much
+                    of Chile’s identity. Long distances and diverse climates require well-planned itineraries, but the
+                    country rewards explorers with stark contrasts and unforgettable scenery. Friendly lodges,
+                    eco-tourism and guided experiences make adventure travel accessible in many regions.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Chile', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Chile as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 41 Jordan -->
+        <article class="country" id="country-Jordan">
+            <img src="https://source.unsplash.com/1600x900/?Jordan,Petra,desert" alt="Jordan">
+            <div class="country-content">
+                <h2>Jordan</h2>
+                <p class="desc">Ancient history and desert landscapes — Petra’s rock-cut architecture and the Dead Sea’s
+                    unique shores are highlights of Jordan. Petra’s rose-coloured facades and elaborate tombs form one
+                    of the world’s most evocative archaeological sites and reward dawn and dusk visits. Wadi Rum’s
+                    desert vistas invite jeep tours, rock-climbing and star-filled nights in Bedouin camps. The Dead
+                    Sea’s buoyant salts and therapeutic muds are world-famous for relaxation and wellness tourism. Amman
+                    provides an accessible cultural hub with museums, markets and historic citadel views. Jerash’s Roman
+                    ruins and smaller sites across the kingdom offer layers of Mediterranean and Middle Eastern history.
+                    Jordanian cuisine is rich with mezze, grilled meats and regional specialties served with warm
+                    hospitality. Friendly guides and compact distances make Jordan straightforward to discover on varied
+                    itineraries.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Jordan', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Jordan to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 42 Georgia -->
+        <article class="country" id="country-Georgia">
+            <img src="https://source.unsplash.com/1600x900/?Georgia,Georgia%20country,Tbilisi,caucasus" alt="Georgia">
+            <div class="country-content">
+                <h2>Georgia</h2>
+                <p class="desc">Nestled between Europe and Asia, Georgia offers ancient monasteries, mountain landscapes
+                    and a warm wine culture centered around Tbilisi and the Caucasus region. Tbilisi’s historic
+                    neighborhoods, sulfur baths and eclectic architecture provide a lively urban base for exploring the
+                    country. The Kakheti region is synonymous with centuries-old winemaking traditions and picturesque
+                    vineyards. The Caucasus Mountains deliver dramatic hiking, alpine villages and highland hospitality
+                    that feel remote and rewarding. Georgian cuisine is generous — khachapuri, grilled meats and bold
+                    flavors accompany robust local wines. Folk music and dance remain important cultural expressions
+                    delivered during festivals and family gatherings. Small guesthouses, lively markets and vivid local
+                    crafts complete a travel experience blending hearty hospitality with remarkable landscapes.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Georgia', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Georgia as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 43 Qatar -->
+        <article class="country" id="country-Qatar">
+            <img src="https://source.unsplash.com/1600x900/?Qatar,Doha,skyline" alt="Qatar">
+            <div class="country-content">
+                <h2>Qatar</h2>
+                <p class="desc">A small but wealthy nation focused on modern architecture, museums and luxury
+                    experiences, centered on Doha and the Gulf coastline. Doha’s skyline, Corniche and cultural venues
+                    like the Museum of Islamic Art highlight ambitious urban design and curated collections. Luxurious
+                    hotels, desert excursions and waterfront promenades cater to high-end tourism and international
+                    events. Souks and cultural districts provide insight into traditional crafts, spices and local food.
+                    The Pearl and coastal developments present marina life, dining and shopping against modern
+                    backdrops. Festivals, international sports and cultural programming have elevated Qatar’s profile as
+                    a global hub for exhibitions and events. Rich hospitality and strong transport links make short
+                    stays comfortable and varied. Small size permits curated cultural itineraries that combine
+                    beachfront leisure with museum and market exploration.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Qatar', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Qatar to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 44 Andorra -->
+        <article class="country" id="country-Andorra">
+            <img src="https://source.unsplash.com/1600x900/?Andorra,pyrenees,mountains" alt="Andorra">
+            <div class="country-content">
+                <h2>Andorra</h2>
+                <p class="desc">A tiny principality in the Pyrenees with alpine scenery, ski resorts and quiet mountain
+                    villages — ideal for outdoor lovers. Andorra la Vella mixes duty-free shopping with mountain access
+                    and compact urban life. Winter sports are a major attraction, with ski areas that draw families and
+                    outdoor enthusiasts. In summer, hiking trails, mountain lakes and valley walks offer peaceful
+                    escapes and panoramic views. Traditional mountain cuisine and small guesthouses emphasize local
+                    flavors and hospitality. The principality’s compact size makes it easy to combine active days with
+                    restful evenings in scenic lodgings. Cultural festivals and parish churches reflect local traditions
+                    and mountain heritage. For travelers seeking nature without long transfers, Andorra offers
+                    approachable mountain experiences year-round.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Andorra', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Andorra to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 45 Cyprus -->
+        <article class="country" id="country-Cyprus">
+            <img src="https://source.unsplash.com/1600x900/?Cyprus,beach,limassol" alt="Cyprus">
+            <div class="country-content">
+                <h2>Cyprus</h2>
+                <p class="desc">Mediterranean beaches, historic sites and warm island culture — Cyprus is a relaxed
+                    destination with a rich history. Coastal resorts along the south and east offer sandy beaches, clear
+                    seas and resort amenities for sunseekers. Ancient ruins, Byzantine churches and Venetian harbors
+                    tell the island’s layered past and attract cultural exploration. Cypriot cuisine is Mediterranean
+                    and hearty, with mezze, grilled meats and local halloumi cheese featuring strongly. Troodos
+                    Mountains provide hiking, vineyards and cooler climes for nature activities away from the coast.
+                    Local festivals, village life and crafts maintain a tangible sense of tradition and community.
+                    Compact size makes Cyprus easy to explore by car and ideal for a balanced mix of relaxation and
+                    cultural touring. Friendly locals and a mild climate encourage year-round visits in many regions.
+                </p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Cyprus', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Cyprus as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 46 Malta -->
+        <article class="country" id="country-Malta">
+            <img src="https://source.unsplash.com/1600x900/?Malta,valletta,mediterranean" alt="Malta">
+            <div class="country-content">
+                <h2>Malta</h2>
+                <p class="desc">Small island nation in the Mediterranean with historic harbors, medieval architecture
+                    and clear swimming waters. Valletta’s fortifications, baroque churches and bustling harbors recall a
+                    long strategic history at the heart of Mediterranean trade routes. The island offers excellent
+                    diving, historic temples older than the pyramids, and compact towns that are delightful to walk.
+                    Maltese cuisine fuses Mediterranean produce with Arabic and Italian influences, using fresh seafood,
+                    tomatoes and herbs. Short ferry hops to Gozo provide quieter island life, dramatic cliffs and
+                    farming traditions. Festivals, religious processions and local festas animate towns throughout the
+                    year. With good transport and a sunny climate, Malta is a convenient cultural and coastal getaway
+                    for short or longer stays.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Malta', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Malta to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 47 Peru -->
+        <article class="country" id="country-Peru">
+            <img src="https://source.unsplash.com/1600x900/?Peru,Machu%20Picchu,Cusco" alt="Peru">
+            <div class="country-content">
+                <h2>Peru</h2>
+                <p class="desc">Home to Machu Picchu and rich Andean culture, Peru is a treasure for hikers, food lovers
+                    and history enthusiasts alike. Cusco’s Inca ruins and colonial streets provide an atmospheric base
+                    for exploring the Sacred Valley and highland markets. Machu Picchu’s dramatic mountain-top ruins
+                    reward early-morning visits and a sense of ancient engineering and spirituality. Lima’s culinary
+                    scene has become world-renowned, blending coastal seafood with Andean ingredients and global
+                    techniques. The Amazon basin portion of Peru offers rainforest lodges, river cruises and
+                    extraordinary biodiversity. High-altitude trekking, local weaving traditions and vibrant markets are
+                    core cultural draws in the Andes. Diverse microclimates reward careful route planning and longer
+                    stays, but the country’s range of experiences is vast and unforgettable.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Peru', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Peru as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 48 El Salvador -->
+        <article class="country" id="country-El Salvador">
+            <img src="https://source.unsplash.com/1600x900/?El%20Salvador,beach,surf" alt="El Salvador">
+            <div class="country-content">
+                <h2>El Salvador</h2>
+                <p class="desc">Compact and surf-friendly, El Salvador offers beaches, volcanoes and growing ecotourism
+                    experiences on Central America’s Pacific coast. Renowned surf breaks like El Tunco draw
+                    international surfers alongside relaxed coastal towns and seafood shacks. Volcanic landscapes
+                    provide hiking opportunities, crater lakes and rugged viewpoints ideal for adventurous day trips.
+                    Colonial towns, local markets and coffee plantations provide cultural context and lovely rural
+                    drives. El Salvador’s small size makes it easy to assemble multi-stop itineraries in a limited time.
+                    Friendly local guides and community-based tourism initiatives give authentic insights into daily
+                    life and nature conservation efforts. While infrastructure is evolving, travelers find concentrated
+                    rewards in surf culture, nature and affordable local hospitality. Growing attention on eco-lodges
+                    and conservation ensures more sustainable travel options in the future.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('El Salvador', this)">Mark as Visited</button>
+                    <span class="visit-note">Add El Salvador to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 49 Costa Rica -->
+        <article class="country" id="country-Costa Rica">
+            <img src="https://source.unsplash.com/1600x900/?Costa%20Rica,rainforest,beach" alt="Costa Rica">
+            <div class="country-content">
+                <h2>Costa Rica</h2>
+                <p class="desc">A biodiversity hotspot with rainforests, wildlife and adventure activities — Costa Rica
+                    is ideal for nature and eco-friendly travel. National parks such as Corcovado and Tortuguero protect
+                    diverse wildlife including monkeys, sloths and sea turtle nesting sites. Cloud forests like
+                    Monteverde offer misty hikes and abundant birdlife, including quetzals and hummingbirds. The Pacific
+                    and Caribbean coasts provide surf, snorkeling and beach resorts that range from rustic to luxurious
+                    eco-lodges. Zip-lining, canopy walks and whitewater rafting satisfy thrill-seekers, while hot
+                    springs and volcanic landscapes deliver restorative experiences. Costa Rican cuisine emphasizes
+                    fresh tropical fruits, seafood and hearty staples like gallo pinto. The country’s “Pura Vida” ethos
+                    — a relaxed, optimistic approach to life — colors local hospitality and traveler experiences.
+                    Well-developed ecotourism infrastructure and conservation-minded guides make it a responsible travel
+                    option for nature lovers of all ages.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Costa Rica', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Costa Rica to your visited list.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 50 Finland -->
+        <article class="country" id="country-Finland">
+            <img src="https://source.unsplash.com/1600x900/?Finland,aurora,helsinki" alt="Finland">
+            <div class="country-content">
+                <h2>Finland</h2>
+                <p class="desc">Northern lights, pristine lakes and modern Nordic design — Finland offers serene nature
+                    and innovative cities like Helsinki. Lapland’s wide open spaces, reindeer herding and aurora-viewing
+                    opportunities make it an exceptional winter destination. Finnish sauna culture is a national pastime
+                    and an essential cultural experience to embrace when visiting. Helsinki provides a clean,
+                    design-forward urban center with museums, waterfronts and contemporary culinary offerings. Thousands
+                    of lakes and summer cottages create a cottage-country feel in warmer months, perfect for kayaking,
+                    fishing and forest hikes. Finnish cuisine highlights seasonal produce, berries and wild game
+                    alongside modern Nordic innovation. Quiet rural pockets and well-tended national parks present
+                    opportunities for solitude and immersive nature time. The country’s strong focus on sustainability
+                    and outdoor life makes it appealing for travelers seeking both comfort and wild landscapes.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Finland', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Finland as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 51 Estonia -->
+        <article class="country" id="country-Estonia">
+            <img src="https://source.unsplash.com/1600x900/?Estonia,tallinn,oldtown" alt="Estonia">
+            <div class="country-content">
+                <h2>Estonia</h2>
+                <p class="desc">A tech-forward Baltic nation with a charming medieval capital (Tallinn), pristine nature
+                    and an easygoing atmosphere. Tallinn’s cobbled streets, fortified walls and historic squares create
+                    a compact, atmospheric old town perfect for strolling and cafés. Estonia’s islands and forests are
+                    quiet retreats where birdlife and coastal scenery dominate. The country has a vibrant startup scene
+                    and progressive digital culture, balanced with traditional folk festivals and wooden architecture.
+                    Local cuisine blends seasonal produce with forage-friendly flavors and contemporary takes on
+                    Estonian classics. Spa culture, seaside towns and historic manor houses offer restful escapes.
+                    Accessible roads and compact distances make it feasible to combine city highlights with rural nature
+                    on short itineraries. Friendly local culture and an emphasis on outdoor living provide a calm,
+                    thoughtful travel experience.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Estonia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Estonia to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 52 Montenegro -->
+        <article class="country" id="country-Montenegro">
+            <img src="https://source.unsplash.com/1600x900/?Montenegro,Kotor,adriatic" alt="Montenegro">
+            <div class="country-content">
+                <h2>Montenegro</h2>
+                <p class="desc">Small Balkan country with dramatic Adriatic fjords, ancient towns such as Kotor, and
+                    scenic mountain landscapes. Kotor’s old harbor and city walls present a compact medieval setting
+                    with winding streets and cliffside views. The Bay of Kotor offers dramatic coastal fjord scenery
+                    with seaside villages and boat excursions. Durmitor National Park provides mountain peaks, glacial
+                    lakes and outdoor adventure including hiking and rafting. Montenegrin cuisine draws on Mediterranean
+                    and Balkan influences with fresh seafood, grilled meats and rustic regional dishes. Quiet beaches
+                    and small coastal resorts provide a relaxed Mediterranean experience off the better-known tourist
+                    track. Friendly small-town hospitality and a compact geography mean visitors can combine mountain
+                    treks with coastal relaxation within a short trip. Montenegro’s blend of medieval charm and raw
+                    nature creates a memorable and accessible Balkan escape.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Montenegro', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Montenegro to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 53 Romania -->
+        <article class="country" id="country-Romania">
+            <img src="https://source.unsplash.com/1600x900/?Romania,Transylvania,brancovenesti" alt="Romania">
+            <div class="country-content">
+                <h2>Romania</h2>
+                <p class="desc">Transylvania’s castles, Carpathian mountains and medieval towns give Romania dramatic
+                    history and beautiful natural scenery. Bran Castle and Brașov’s old town evoke myths and historic
+                    architecture, while Sibiu and Sighișoara preserve medieval charm and colorful piazzas. The
+                    Carpathians offer excellent hiking, wildlife spotting and traditional villages still centered on
+                    pastoral life. Romania’s rural folk traditions, woodcarving, and monastery frescoes provide cultural
+                    depth to journeys away from cities. Bucharest blends grand boulevards and modern cultural venues,
+                    reflecting a mix of historical influences. Local cuisine features hearty stews, cheeses and seasonal
+                    produce, often found in village markets. Scenic drives through mountain passes and dense forests
+                    reward travelers seeking dramatic landscapes and cultural authenticity. Romania’s affordability,
+                    history and natural variety make it a compelling destination for adventurous travelers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Romania', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Romania as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 54 Serbia -->
+        <article class="country" id="country-Serbia">
+            <img src="https://source.unsplash.com/1600x900/?Serbia,belgrade,danube" alt="Serbia">
+            <div class="country-content">
+                <h2>Serbia</h2>
+                <p class="desc">Belgrade’s nightlife, historic fortresses and friendly hospitality make Serbia an
+                    engaging stop in the Balkans. The confluence of the Sava and Danube rivers forms dramatic riverside
+                    promenades and lively evening scenes. Historic Kalemegdan Fortress and cobbled streets anchor city
+                    exploration, while neighborhoods reveal eclectic cafes and music venues. Rural Serbia preserves
+                    traditional crafts, monasteries and countryside festivals that showcase local life. Serbian cuisine
+                    centers on grilled meats, hearty sides and rich pastries, and local rakija plays a role in social
+                    rituals. The country’s cultural scene features folk traditions alongside contemporary arts, film and
+                    music festivals. Road trips into scenic regions reveal mountain villages and river valleys ideal for
+                    hiking and tranquil retreats. Affordability and genuine local warmth make Serbia a rewarding Balkan
+                    discovery for curious travelers.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Serbia', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Serbia to your visited countries.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 55 Azerbaijan -->
+        <article class="country" id="country-Azerbaijan">
+            <img src="https://source.unsplash.com/1600x900/?Azerbaijan,Baku,flame%20towers" alt="Azerbaijan">
+            <div class="country-content">
+                <h2>Azerbaijan</h2>
+                <p class="desc">The Caucasus nation around Baku mixes modern skylines and historic sites with rich
+                    cultural influences and scenic landscapes. Baku’s Flame Towers and seafront boulevard reflect modern
+                    architecture and vibrant urban life. The walled old city, Icherisheher, preserves ancient streets,
+                    caravanserai and historic mosques for contemplative exploration. Azerbaijan’s hinterland offers
+                    mountain villages, mud volcanoes and pastoral scenery in the Caucasus foothills. Local cuisine
+                    blends Turkish, Persian and Russian influences with aromatic pilafs, kebabs and tea culture.
+                    Cultural festivals, carpet-weaving traditions and local crafts remain important parts of national
+                    identity. Road trips reveal changing landscapes and warm hospitality in smaller towns. For travelers
+                    seeking both modern city energy and off-the-beaten-path mountain culture, Azerbaijan provides a
+                    compelling mixture.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Azerbaijan', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Azerbaijan as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 56 Morocco -->
+        <article class="country" id="country-Morocco">
+            <img src="https://source.unsplash.com/1600x900/?Morocco,Marrakech,medina" alt="Morocco">
+            <div class="country-content">
+                <h2>Morocco</h2>
+                <p class="desc">Historic medinas, desert landscapes, vibrant souks and unique architecture make Morocco
+                    a sensory-rich travel destination. Marrakech’s Jemaa el-Fnaa square pulses with storytellers, food
+                    stalls and artisans, while the medina’s alleys reveal gorgeous riads and craft workshops. Fes
+                    preserves an ancient medina with tanneries and world-class artisan traditions. The Atlas Mountains
+                    provide dramatic trekking, Berber villages and cooler climates above the plains. Desert excursions
+                    into the Sahara reveal dunes, starry nights and traditional nomadic hospitality. Coastal towns like
+                    Essaouira and Agadir combine seafood, fishing ports and relaxed seaside life. Moroccan cuisine —
+                    tagines, couscous and mint tea — is aromatic and communal. Cultural festivals and historic palaces
+                    make Morocco a deep cultural immersion combining Arabic, Berber and Andalusian heritage.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Morocco', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Morocco to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 57 Vietnam -->
+        <article class="country" id="country-Vietnam">
+            <img src="https://source.unsplash.com/1600x900/?Vietnam,Hanoi,Ha%20Long%20Bay" alt="Vietnam">
+            <div class="country-content">
+                <h2>Vietnam</h2>
+                <p class="desc">From bustling Hanoi and fragrant street food to the emerald karsts of Ha Long Bay and
+                    tropical southern islands — Vietnam is a feast for the senses. Hanoi’s Old Quarter offers markets,
+                    street-side cafés and centuries of layered urban life, while Ho Chi Minh City is vibrant with
+                    energy, historic sites and a thriving food scene. Ha Long Bay’s limestone karsts and emerald waters
+                    provide unforgettable cruise experiences and serene scenery. Northern hill tribes, rice terraces in
+                    Sapa and central Vietnamese heritage towns such as Hoi An present cultural variety and scenic
+                    trekking. Vietnamese cuisine emphasizes fresh herbs, complex broths and a balance of textures in
+                    dishes like pho, bánh mì and regional specialties. Coffee culture is strong and inventive, from drip
+                    coffee to egg coffee traditions. Local markets, handicrafts and riverside life make Vietnam a
+                    dynamic place for culinary and cultural discovery. Transport options and growing tourism
+                    infrastructure make it increasingly straightforward to combine urban, coastal and highland
+                    experiences in one trip.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Vietnam', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Vietnam as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 58 Switzerland -->
+        <article class="country" id="country-Switzerland">
+            <img src="https://source.unsplash.com/1600x900/?Switzerland,alps,lake" alt="Switzerland">
+            <div class="country-content">
+                <h2>Switzerland</h2>
+                <p class="desc">Alpine peaks, clear lakes and refined cities — Switzerland combines outdoor adventure,
+                    picture-postcard scenery and excellent transport links. The Swiss Alps offer world-class skiing,
+                    hiking and alpine rail journeys with panoramic routes like the Glacier Express. Lakeside towns such
+                    as Lucerne and Montreux provide scenic promenades, festivals and cultural events. Switzerland’s
+                    cities combine efficient urban living with museums, chocolate and watchmaking heritage. Local
+                    cuisine highlights cheeses (fondue, raclette), cured meats and robust bakery traditions. A
+                    commitment to precision and good infrastructure makes travel between regions effortless and scenic.
+                    Small mountain villages offer immersive cultural experiences with local crafts and seasonal
+                    celebrations. For travelers seeking dramatic landscapes and refined comfort, Switzerland remains a
+                    classic, year-round destination.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Switzerland', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Switzerland to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 59 Egypt -->
+        <article class="country" id="country-Egypt">
+            <img src="https://source.unsplash.com/1600x900/?Egypt,pyramids,Nile" alt="Egypt">
+            <div class="country-content">
+                <h2>Egypt</h2>
+                <p class="desc">Ancient wonders such as the Pyramids of Giza, the Nile River and a long civilization
+                    history make Egypt a must-see for history lovers. Cairo’s museums, bustling markets and Mamluk-era
+                    streets present layered histories alongside modern city life. Luxor and the Valley of the Kings hold
+                    temples and tombs that provide unique archaeological insights and impressive monuments. Nile cruises
+                    are a classic way to travel between southern historic sites while enjoying riverside scenery and
+                    local culture. The Red Sea resorts provide excellent diving and coral reefs for underwater
+                    exploration and relaxation. Egyptian cuisine features unique staples like ful medames, koshari and
+                    fresh seafood along the coasts. Local hospitality and historical storytelling bring ancient
+                    artifacts to life while contemporary culture and festivals animate urban areas. For travelers
+                    fascinated by antiquity and desert landscapes, Egypt remains an unparalleled destination.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Egypt', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark Egypt as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 60 Portugal -->
+        <article class="country" id="country-Portugal">
+            <img src="https://source.unsplash.com/1600x900/?Portugal,lisbon,porto" alt="Portugal">
+            <div class="country-content">
+                <h2>Portugal</h2>
+                <p class="desc">Portugal charms with historic Lisbon, port wine in Porto, golden beaches in the Algarve
+                    and a relaxed Atlantic culture. Lisbon’s hills, trams and viewpoints reveal pastel-colored
+                    neighborhoods, fado music and maritime history. Porto’s riverside district is famous for port
+                    cellars, tiled facades and lively culinary scenes. The Algarve offers dramatic cliffs, hidden coves
+                    and beach towns ideal for sun, surf and fresh seafood. Inland, the Douro Valley’s terraced vineyards
+                    produce world-class wines and scenic river cruises. Portugal’s rustic cuisine, pastries like pastéis
+                    de nata and local seafood celebrate the Atlantic bounty. Small towns, historic monasteries and
+                    coastal walks make the country easy to explore by car or train. Friendly locals, affordable travel
+                    options and a mild climate round out Portugal’s strong appeal as a varied European destination.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('Portugal', this)">Mark as Visited</button>
+                    <span class="visit-note">Add Portugal to visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- 61 South Africa -->
+        <article class="country" id="country-South Africa">
+            <img src="https://source.unsplash.com/1600x900/?South%20Africa,Table%20Mountain,safari" alt="South Africa">
+            <div class="country-content">
+                <h2>South Africa</h2>
+                <p class="desc">A country of dramatic contrasts — wildlife safaris, diverse coastlines and cities such
+                    as Cape Town offer both natural wonders and cultural vibrancy. Cape Town’s Table Mountain, Victoria
+                    & Alfred Waterfront and nearby winelands create a compelling mix of outdoor, culinary and urban
+                    experiences. The Garden Route and coastal drives showcase scenic beaches, lagoons and forests
+                    perfect for road trips. Kruger National Park and private game reserves provide world-class safari
+                    opportunities and chances to see the Big Five up close. South Africa’s cultural tapestry includes
+                    vibrant townships, rich musical traditions and a complex history that shapes contemporary life.
+                    Local cuisine blends indigenous, colonial and immigrant influences into diverse regional flavors.
+                    Outdoor activities range from shark cage diving and surfing to mountain hikes and wine tours. With a
+                    strong tourism infrastructure and varied ecosystems, South Africa offers big experiences across
+                    relatively accessible distances.</p>
+                <div class="controls">
+                    <button class="visit-btn" onclick="addVisited('South Africa', this)">Mark as Visited</button>
+                    <span class="visit-note">Mark South Africa as visited.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- end of countries list -->
+
+        <div class="nav-row">
+            <div class="visit-note">Your browser stores visited countries locally. Go to the Visited page to view or
+                remove entries.</div>
+            <div style="margin-left:auto">
+                <a class="btn" href="visited.html">View Visited →</a>
+            </div>
+        </div>
+
+        <footer class="page-foot">&copy; 2025 Travel Guide</footer>
+    </div>
+
+    <script>
+        // addVisited(countryName, buttonElement)
+        // stores in localStorage under key 'visitedCountries' as an array of strings
+        function addVisited(country, btn) {
+            if (!country) return;
+            const key = 'visitedCountries';
+            const raw = localStorage.getItem(key);
+            let arr = [];
+            try { arr = raw ? JSON.parse(raw) : []; } catch (e) { arr = []; }
+
+            if (arr.includes(country)) {
+                // already visited - give gentle feedback
+                btn && (btn.textContent = 'Already Added');
+                btn && (btn.disabled = true);
+                setTimeout(() => {
+                    if (btn) { btn.textContent = 'Mark as Visited'; btn.disabled = false; }
+                }, 1200);
+                return;
+            }
+            arr.push(country);
+            localStorage.setItem(key, JSON.stringify(arr));
+            if (btn) {
+                btn.textContent = 'Added ✓';
+                btn.disabled = true;
+            }
+            // small toast-like feedback (native alert removed for friendliness)
+            const n = document.createElement('div');
+            n.textContent = country + ' added to your visited list';
+            Object.assign(n.style, {
+                position: 'fixed', right: '18px', bottom: '18px', background: '#222', color: '#fff',
+                padding: '10px 14px', borderRadius: '8px', opacity: '0', transform: 'translateY(8px)',
+                transition: 'all .28s ease', zIndex: 9999
+            });
+            document.body.appendChild(n);
+            requestAnimationFrame(() => { n.style.opacity = '1'; n.style.transform = 'translateY(0)' });
+            setTimeout(() => {
+                n.style.opacity = '0'; n.style.transform = 'translateY(8px)';
+                setTimeout(() => n.remove(), 300);
+            }, 1600);
+        }
+
+        // Optional: pre-disable buttons for items already in visited list on load
+        (function disableAlreadyAdded() {
+            const key = 'visitedCountries';
+            let arr = [];
+            try { arr = JSON.parse(localStorage.getItem(key)) || []; } catch (e) { arr = []; }
+            if (!arr.length) return;
+            arr.forEach(c => {
+                // find country element by id scheme "country-<Name>"
+                const safeId = 'country-' + c;
+                const el = document.getElementById(safeId);
+                if (el) {
+                    const btn = el.querySelector('.visit-btn');
+                    if (btn) { btn.textContent = 'Added ✓'; btn.disabled = true; }
+                } else {
+                    // sometimes id contains parentheses or spaces; try search by inner h2 text
+                    document.querySelectorAll('.country').forEach(card => {
+                        const h = card.querySelector('h2');
+                        if (h && h.textContent.trim() === c) {
+                            const b = card.querySelector('.visit-btn');
+                            if (b) { b.textContent = 'Added ✓'; b.disabled = true; }
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
