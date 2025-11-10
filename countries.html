@@ -57,6 +57,65 @@
             font-size: 1.05rem;
         }
 
+        /* top controls (search, home, clear) */
+        .topbar {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 26px;
+            border-bottom: 1px solid #f3f3f4;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+            backdrop-filter: blur(4px);
+        }
+
+        .search-input {
+            flex: 1;
+            max-width: 560px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #e8e8ee;
+            font-size: 0.95rem;
+        }
+
+        .top-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center
+        }
+
+        /* default button link style used across the page */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--accent1), var(--accent2));
+            color: #fff;
+            font-weight: 700;
+            border: 0;
+            box-shadow: 0 6px 18px rgba(79, 42, 200, 0.08);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:focus {
+            outline: 3px solid rgba(102, 126, 234, 0.18);
+            outline-offset: 2px;
+        }
+
+        .btn--muted {
+            background: transparent;
+            color: var(--muted);
+            border: 1px solid #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none
+        }
+
+
         /* each country is a full-width stacked card */
         .country {
             background: var(--card-bg);
@@ -183,6 +242,15 @@
         <header>
             <h1>Countries To Visit</h1>
         </header>
+
+        <div class="topbar" role="region" aria-label="Search and actions">
+            <input class="search-input" id="countrySearch" placeholder="Search countries (e.g. Italy, Japan...)"
+                aria-label="Search countries" />
+            <div class="top-actions">
+                <a class="btn" href="visited.html" title="Home">Visited</a>
+                <button id="clearVisitedBtn" class="visit-btn" title="Clear visited list">Clear Visited</button>
+            </div>
+        </div>
 
         <!-- Countries list: each section uses Unsplash search so you get a pretty image automatically.
          If you prefer a fixed photo, replace the img src with a direct URL or local file path. -->
@@ -384,15 +452,18 @@
 
         <!-- 8 Mexico -->
         <article class="country" id="country-Mexico">
-            <img src="Countries\Mexixo.jpg" alt="Mexico">
+            <img src="Countries\Mexico.jpg" alt="Mexico">
             <div class="country-content">
                 <h2>Mexico</h2>
                 <p class="desc">Mexico is known for vibrant culture, ancient history, and diverse landscapes. Mexico
                     City blends historic sites like the Zócalo and modern urban life. The Yucatán Peninsula features
                     Mayan ruins such as Chichén Itzá. Colorful festivals and traditional cuisine attract visitors.
-                    Coastal resorts in Cancún and Riviera Maya offer beautiful beaches. Colonial architecture enriches
-                    cities like Guanajuato. Music, dance, and crafts reflect indigenous and Spanish heritage. Mexico’s
-                    natural parks preserve biodiversity and scenic beauty. The Day of the Dead is a symbolic cultural
+                    Coastal resorts in Cancún and Riviera Maya offer beautiful beaches. Colonial architecture
+                    enriches
+                    cities like Guanajuato. Music, dance, and crafts reflect indigenous and Spanish heritage.
+                    Mexico’s
+                    natural parks preserve biodiversity and scenic beauty. The Day of the Dead is a symbolic
+                    cultural
                     event. Warm hospitality and lively markets welcome tourists.</p>
                 <div class="controls">
                     <button class="visit-btn" onclick="addVisited('Mexico', this)">Mark as Visited</button>
@@ -403,13 +474,17 @@
 
         <!-- 9 Thailand -->
         <article class="country" id="country-Thailand">
-            <img src="Countries/Thailand.jpg" alt="Thailand">
+            <img src="Countries\Thailand.jpg" alt="Thailand">
             <div class="country-content">
                 <h2>Thailand</h2>
-                <p class="desc">Thailand boasts stunning natural beauty, rich culture, and flavorful cuisine. Bangkok is
-                    a bustling metropolis with temples and vibrant street markets. White sandy beaches and islands like
-                    Phuket draw sun seekers. Elaborate Buddhist temples emphasize spirituality and heritage. Thai food
-                    is known worldwide for its balance of spicy, sour, sweet, and salty. Festivals like Songkran (water
+                <p class="desc">Thailand boasts stunning natural beauty, rich culture, and flavorful cuisine.
+                    Bangkok is
+                    a bustling metropolis with temples and vibrant street markets. White sandy beaches and islands
+                    like
+                    Phuket draw sun seekers. Elaborate Buddhist temples emphasize spirituality and heritage. Thai
+                    food
+                    is known worldwide for its balance of spicy, sour, sweet, and salty. Festivals like Songkran
+                    (water
                     festival) are widely celebrated. Traditional dance and arts flourish. The country offers lush
                     jungles and waterfalls for adventurers. Friendly locals and hospitality are cultural hallmarks.
                     Thailand mixes tradition and modernity seamlessly.</p>
@@ -442,13 +517,18 @@
         <!-- 11 Austria -->
         <article class="country" id="country-Austria">
             <img src="Countries/Austria.jpg" alt="Austria">
+
             <div class="country-content">
                 <h2>Austria</h2>
-                <p class="desc">Austria offers alpine landscapes, classical music heritage, and baroque architecture.
+                <p class="desc">Austria offers alpine landscapes, classical music heritage, and baroque
+                    architecture.
                     Vienna, the capital, is renowned for its opera and palaces. Salzburg is Mozart’s birthplace with
-                    charming old towns. The Alps provide skiing, hiking, and nature retreats. Austrian cuisine includes
-                    schnitzel and strudel. The country has a rich cultural tradition in art and music. Historic coffee
-                    houses and markets add local flavor. Castles and monasteries dot the countryside. The Danube River
+                    charming old towns. The Alps provide skiing, hiking, and nature retreats. Austrian cuisine
+                    includes
+                    schnitzel and strudel. The country has a rich cultural tradition in art and music. Historic
+                    coffee
+                    houses and markets add local flavor. Castles and monasteries dot the countryside. The Danube
+                    River
                     flows through scenic landscapes. Austria is ideal for culture and nature lovers alike.</p>
                 <div class="controls">
                     <button class="visit-btn" onclick="addVisited('Austria', this)">Mark as Visited</button>
@@ -460,9 +540,11 @@
         <!-- 12 Malaysia -->
         <article class="country" id="country-Malaysia">
             <img src="Countries\Malysia.jpg" alt="Malaysia">
+
             <div class="country-content">
                 <h2>Malaysia</h2>
-                <p class="desc">Malaysia combines cosmopolitan cities, cultural diversity, and tropical islands. Kuala
+                <p class="desc">Malaysia combines cosmopolitan cities, cultural diversity, and tropical islands.
+                    Kuala
                     Lumpur features the iconic Petronas Towers. George Town is a UNESCO Heritage site with colonial
                     architecture and street art. The country has diverse ethnic groups including Malay, Chinese, and
                     Indian communities. Beaches on Langkawi and the Perhentian Islands attract tourists. Malaysian
@@ -1569,7 +1651,7 @@
             </div>
         </div>
 
-        <footer class="page-foot">&copy; 2025 Travel Guide</footer>
+        <footer class="page-foot">&copy; 2025 Travel Guide by Balasridhar</footer>
     </div>
 
     <script>
@@ -1638,6 +1720,37 @@
                 }
             });
         })();
+
+        // search/filter behavior
+        const searchInput = document.getElementById('countrySearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const q = e.target.value.trim().toLowerCase();
+                document.querySelectorAll('.country').forEach(card => {
+                    const title = (card.querySelector('h2') || { textContent: '' }).textContent.toLowerCase();
+                    const desc = (card.querySelector('.desc') || { textContent: '' }).textContent.toLowerCase();
+                    const matches = !q || title.includes(q) || desc.includes(q);
+                    card.style.display = matches ? '' : 'none';
+                });
+            });
+        }
+
+        // clear visited list (with confirmation)
+        const clearBtn = document.getElementById('clearVisitedBtn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (!confirm('Clear your visited countries list? This cannot be undone.')) return;
+                localStorage.removeItem('visitedCountries');
+                // reset buttons
+                document.querySelectorAll('.visit-btn').forEach(b => { b.textContent = 'Mark as Visited'; b.disabled = false; });
+                // small toast
+                const t = document.createElement('div');
+                t.textContent = 'Visited list cleared';
+                Object.assign(t.style, { position: 'fixed', right: '18px', bottom: '18px', background: '#222', color: '#fff', padding: '10px 14px', borderRadius: '8px', zIndex: 9999 });
+                document.body.appendChild(t);
+                setTimeout(() => t.remove(), 1600);
+            });
+        }
     </script>
 </body>
 
