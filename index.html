@@ -147,5 +147,25 @@
                     <p>Discover must-try dishes and dining spots.</p>
                 </div>
             </div>
-            <a href="#" class="cta-button" style="text-align:center;">Start Your Journey Now</a>
+            <a href="countries.html" class="cta-button" style="text-align:center;">Start Your Journey Now</a>
         </div>
+        <footer>
+            <small>&copy; 2025 Travel-Guide · Built with ❤️</small>
+        </footer>
+    </div>
+
+    <script>
+        // small hero animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cta = document.querySelector('.cta-button');
+            if (cta) {
+                cta.animate([
+                    { transform: 'translateY(6px)', opacity: 0 },
+                    { transform: 'translateY(0)', opacity: 1 }
+                ], { duration: 600, easing: 'cubic-bezier(.2,.9,.2,1)' });
+            }
+        });
+    </script>
+</body>
+
+</html>

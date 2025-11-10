@@ -40,6 +40,12 @@
             border-radius: 6px;
         }
 
+        .visited-row { display:flex; align-items:center; justify-content:space-between; gap:12px }
+
+        .remove-btn { background: #ff6b6b; color: white; border: 0; padding: 6px 10px; border-radius:6px; cursor:pointer }
+
+        .clear-all { background: linear-gradient(90deg,#7f5af0,#4a3aff); color: #fff; padding:8px 12px; border-radius:8px; text-decoration:none; border:0 }
+
         .back {
             display: inline-block;
             margin-top: 25px;
@@ -60,23 +66,66 @@
 <body>
     <div class="container">
         <h1>Your Visited Countries</h1>
+        <div style="margin-bottom:12px; display:flex; gap:8px; align-items:center; justify-content:center;">
+            <button id="clearAll" class="clear-all">Clear All</button>
+        </div>
         <ul id="visitedList"></ul>
         <a href="countries.html" class="back">← Back to Countries</a>
     </div>
 
     <script>
-        const visited = JSON.parse(localStorage.getItem('visitedCountries')) || [];
         const list = document.getElementById('visitedList');
 
-        if (visited.length === 0) {
-            list.innerHTML = "<li>You haven’t marked any countries as visited yet.</li>";
-        } else {
+        function renderVisited() {
+            const visited = JSON.parse(localStorage.getItem('visitedCountries')) || [];
+            list.innerHTML = '';
+            if (visited.length === 0) {
+                list.innerHTML = '<li>You haven’t marked any countries as visited yet.</li>';
+                return;
+            }
             visited.forEach(country => {
                 const li = document.createElement('li');
-                li.textContent = country;
+                const row = document.createElement('div');
+                row.className = 'visited-row';
+                const name = document.createElement('div');
+                name.textContent = country;
+                const remove = document.createElement('button');
+                remove.className = 'remove-btn';
+                remove.textContent = 'Remove';
+                remove.addEventListener('click', () => removeVisited(country));
+                row.appendChild(name);
+                row.appendChild(remove);
+                li.appendChild(row);
                 list.appendChild(li);
             });
         }
+
+        function removeVisited(country) {
+            let arr = [];
+            try { arr = JSON.parse(localStorage.getItem('visitedCountries')) || []; } catch (e) { arr = []; }
+            arr = arr.filter(c => c !== country);
+            localStorage.setItem('visitedCountries', JSON.stringify(arr));
+            // update countries page buttons if open in the same tab
+            document.querySelectorAll('.country').forEach(card => {
+                const h = card.querySelector('h2');
+                if (h && h.textContent.trim() === country) {
+                    const b = card.querySelector('.visit-btn');
+                    if (b) { b.textContent = 'Mark as Visited'; b.disabled = false; }
+                }
+            });
+            renderVisited();
+        }
+
+        document.getElementById('clearAll').addEventListener('click', () => {
+            if (!confirm('Clear all visited countries?')) return;
+            localStorage.removeItem('visitedCountries');
+            renderVisited();
+            // also reset any visit buttons
+            document.querySelectorAll('.visit-btn').forEach(b => { b.textContent = 'Mark as Visited'; b.disabled = false; });
+        });
+
+        // initial render
+        renderVisited();
     </script>
 </body>
 
